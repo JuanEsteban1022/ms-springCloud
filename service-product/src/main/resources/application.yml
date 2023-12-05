@@ -1,0 +1,25 @@
+#Application Configuration
+server:
+  port: 8091
+
+#DataBase Configuration
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=store
+    username: postgres
+    password: Admin
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        show_sql: true
+        use_sql_comments: false
+        format_sql: false
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+
