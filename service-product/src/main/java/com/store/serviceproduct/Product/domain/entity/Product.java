@@ -22,7 +22,7 @@ import java.util.Date;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long Id;
+    private long id;
 
     @NotEmpty(message = "El nombre del campo no debe ser vacío")
     private String name;

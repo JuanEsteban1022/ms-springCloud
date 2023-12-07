@@ -3,6 +3,7 @@ package store.invoiceservice.invoice.domain.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Positive;
 import lombok.Data;
+import store.invoiceservice.invoice.infraestructure.model.Product;
 
 @Entity
 @Data
@@ -19,10 +20,13 @@ public class InvoiceItem {
     @Column(name = "product_id")
     private Long productId;
 
-
+    // Tiene esta anotación porque no se almacena en la DB
     @Transient
     private Double subTotal;
 
+    // Tiene esta anotación porque no se almacena en la DB
+    @Transient
+    private Product product;
 
     public Double getSubTotal() {
         if (this.price > 0 && this.quantity > 0) {

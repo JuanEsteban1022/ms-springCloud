@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import lombok.Data;
+import store.invoiceservice.invoice.infraestructure.model.Customer;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -39,6 +40,10 @@ public class Invoice {
     private List<InvoiceItem> items;
 
     private String state;
+
+    // Tiene esta anotación porque no se almacena en la DB
+    @Transient
+    private Customer customer;
 
     public Invoice() {
         items = new ArrayList<>();
